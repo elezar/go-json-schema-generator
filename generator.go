@@ -51,6 +51,7 @@ func (d *Document) String() string {
 }
 
 type property struct {
+	Title                string               `json:"title,omitempty"`
 	Type                 string               `json:"type,omitempty"`
 	Format               string               `json:"format,omitempty"`
 	Items                *property            `json:"items,omitempty"`
@@ -59,6 +60,7 @@ type property struct {
 	AdditionalProperties bool                 `json:"additionalProperties,omitempty"`
 	Description          string               `json:"description,omitempty"`
 	AnyOf                []*property          `json:"anyOf,omitempty"`
+	Default              interface{}          `json:"default,omitempty`
 
 	// validation keywords:
 	// For any number-valued fields, we're making them pointers, because
